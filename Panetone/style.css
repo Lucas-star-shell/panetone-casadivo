@@ -1,0 +1,1199 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #fffaf5;
+    color: #3d2922;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* ========================================
+   VARIÁVEIS
+======================================== */
+
+:root {
+
+    --primary: #7b3f25;
+    --primary-dark: #572719;
+
+    --secondary: #c68b59;
+
+    --cream: #fffaf5;
+    --cream-dark: #f5e8dc;
+
+    --white: #ffffff;
+
+    --text: #3d2922;
+    --text-light: #765e54;
+
+    --border: #eadbd0;
+
+    --shadow: 0 15px 40px rgba(61, 41, 34, 0.10);
+
+    --radius: 18px;
+
+    --container: 1180px;
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.container {
+    width: min(90%, var(--container));
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 250, 245, 0.96);
+
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.header-container {
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* LOGO */
+
+.logo {
+    font-family: "Playfair Display", serif;
+
+    font-size: 1.45rem;
+
+    font-weight: 700;
+
+    color: var(--primary);
+
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--secondary);
+}
+
+
+/* NAV */
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav a {
+    font-size: 0.95rem;
+
+    font-weight: 500;
+
+    color: var(--text-light);
+
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: var(--primary);
+}
+
+
+/* HEADER BUTTON */
+
+.header-button {
+    background: var(--primary);
+
+    color: white;
+
+    padding: 11px 18px;
+
+    border-radius: 50px;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.header-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+
+/* MOBILE MENU BUTTON */
+
+.menu-button {
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 1.8rem;
+
+    cursor: pointer;
+
+    color: var(--primary);
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    padding: 90px 0;
+
+    background:
+        linear-gradient(135deg,
+            #fffaf5 0%,
+            #f7e9dd 100%);
+}
+
+.hero-container {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-label {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 7px 14px;
+
+    background: var(--cream-dark);
+
+    color: var(--primary);
+
+    border-radius: 50px;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(2.8rem, 5vw, 4.8rem);
+
+    line-height: 1.05;
+
+    color: var(--primary);
+
+    margin-bottom: 25px;
+}
+
+.hero p {
+    max-width: 520px;
+
+    font-size: 1.1rem;
+
+    color: var(--text-light);
+
+    margin-bottom: 32px;
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+}
+
+.button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 14px 23px;
+
+    border-radius: 50px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+
+    cursor: pointer;
+}
+
+.button-primary {
+    background: var(--primary);
+
+    color: white;
+}
+
+.button-primary:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+}
+
+.button-secondary {
+    border: 1px solid var(--border);
+
+    color: var(--primary);
+
+    background: white;
+}
+
+.button-secondary:hover {
+    border-color: var(--primary);
+
+    transform: translateY(-2px);
+}
+
+
+/* HERO IMAGE */
+
+.hero-image {
+    display: flex;
+
+    justify-content: center;
+}
+
+.hero-image-placeholder {
+    width: min(100%, 500px);
+
+    aspect-ratio: 1 / 1;
+
+    border-radius: 30px;
+
+    background: #ead6c5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    color: var(--primary);
+
+    box-shadow: var(--shadow);
+}
+
+.hero-image-placeholder span {
+    font-size: 8rem;
+
+    margin-bottom: 15px;
+}
+
+.hero-image-placeholder p {
+    margin: 0;
+
+    color: var(--primary);
+
+    font-weight: 600;
+}
+
+
+/* ========================================
+   HIGHLIGHTS
+======================================== */
+
+.highlights {
+    background: white;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.highlights-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+    padding: 30px 0;
+}
+
+.highlight {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.highlight-icon {
+    width: 48px;
+
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--cream-dark);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 1.3rem;
+}
+
+.highlight h3 {
+    font-size: 1rem;
+
+    margin-bottom: 2px;
+}
+
+.highlight p {
+    font-size: 0.85rem;
+
+    color: var(--text-light);
+}
+
+
+/* ========================================
+   SEÇÕES
+======================================== */
+
+.section {
+    padding: 100px 0;
+}
+
+.section-heading {
+    text-align: center;
+
+    max-width: 650px;
+
+    margin: 0 auto 50px;
+}
+
+.section-label {
+    display: block;
+
+    color: var(--secondary);
+
+    font-weight: 700;
+
+    font-size: 0.85rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 10px;
+}
+
+.section-heading h2,
+.about-content h2,
+.contact-content h2 {
+    font-family: "Playfair Display", serif;
+
+    color: var(--primary);
+
+    font-size: clamp(2.1rem, 4vw, 3.2rem);
+
+    line-height: 1.15;
+
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    color: var(--text-light);
+}
+
+
+/* ========================================
+   PRODUTOS
+======================================== */
+
+.products {
+    background: var(--cream);
+}
+
+.products-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+.product-card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: var(--shadow);
+}
+
+.product-image {
+    width: 100%;
+    height: 220px;
+
+    background: #ead6c5;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.03);
+}
+
+.product-image span {
+    font-size: 6rem;
+}
+
+.product-content {
+    padding: 24px;
+}
+
+.product-tag {
+    display: inline-block;
+
+    color: var(--secondary);
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+}
+
+.product-content h3 {
+    font-family: "Playfair Display", serif;
+
+    color: var(--primary);
+
+    font-size: 1.45rem;
+
+    margin-bottom: 8px;
+}
+
+.product-content p {
+    color: var(--text-light);
+
+    font-size: 0.9rem;
+
+    margin-bottom: 20px;
+}
+
+.product-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+.product-price {
+    color: var(--primary);
+
+    font-size: 1.2rem;
+}
+
+.product-button {
+    background: var(--primary);
+
+    color: white;
+
+    padding: 9px 15px;
+
+    border-radius: 50px;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.product-button:hover {
+    background: var(--primary-dark);
+}
+
+
+/* ========================================
+   PROMO
+======================================== */
+
+.promo {
+    padding: 90px 0;
+
+    background: var(--primary);
+
+    color: white;
+
+    overflow: hidden;
+}
+
+.promo-container {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+.promo-content {
+    max-width: 650px;
+}
+
+.promo-content>span {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    font-weight: 600;
+
+    color: #f3d1b2;
+}
+
+.promo h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(2.5rem, 5vw, 4rem);
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+}
+
+.promo p {
+    color: #f0ddd0;
+
+    max-width: 550px;
+
+    margin-bottom: 30px;
+}
+
+.button-light {
+    background: white;
+
+    color: var(--primary);
+}
+
+.button-light:hover {
+    transform: translateY(-2px);
+}
+
+.promo-decoration {
+    font-size: 12rem;
+
+    opacity: 0.9;
+}
+
+
+/* ========================================
+   SOBRE
+======================================== */
+
+.about {
+    background: white;
+}
+
+.about-container {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.about-image-placeholder {
+    aspect-ratio: 1 / 1;
+
+    background: #ead6c5;
+
+    border-radius: 30px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 9rem;
+
+    box-shadow: var(--shadow);
+}
+
+.about-content p {
+    color: var(--text-light);
+
+    margin-bottom: 18px;
+
+    max-width: 570px;
+}
+
+.about-content .button {
+    margin-top: 10px;
+}
+
+
+/* ========================================
+   COMO PEDIR
+======================================== */
+
+.how-to {
+    background: var(--cream);
+}
+
+.steps {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.step {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 30px;
+
+    display: flex;
+
+    gap: 20px;
+}
+
+.step-number {
+    font-family: "Playfair Display", serif;
+
+    font-size: 2rem;
+
+    color: var(--secondary);
+
+    font-weight: 700;
+}
+
+.step h3 {
+    color: var(--primary);
+
+    margin-bottom: 6px;
+}
+
+.step p {
+    color: var(--text-light);
+
+    font-size: 0.9rem;
+}
+
+
+/* ========================================
+   CONTATO
+======================================== */
+
+.contact {
+    background: white;
+}
+
+.contact-container {
+    display: grid;
+
+    grid-template-columns: 1.2fr 0.8fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.contact-content p {
+    max-width: 550px;
+
+    color: var(--text-light);
+
+    margin-bottom: 28px;
+}
+
+.contact-info {
+    background: var(--cream);
+
+    border-radius: var(--radius);
+
+    padding: 35px;
+}
+
+.contact-item {
+    display: flex;
+
+    gap: 15px;
+
+    align-items: center;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-item>span {
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: white;
+
+    border-radius: 50%;
+
+    font-size: 1.2rem;
+}
+
+.contact-item strong {
+    color: var(--primary);
+}
+
+.contact-item p {
+    margin: 0;
+
+    color: var(--text-light);
+
+    font-size: 0.9rem;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+    background: #2e1e18;
+
+    color: white;
+
+    padding-top: 65px;
+}
+
+.footer-container {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 50px;
+
+    padding-bottom: 50px;
+}
+
+.footer-logo {
+    color: white;
+}
+
+.footer-logo span {
+    color: #d5a276;
+}
+
+.footer-brand p {
+    color: #cdbdb5;
+
+    margin-top: 12px;
+}
+
+.footer h3 {
+    font-size: 1rem;
+
+    margin-bottom: 18px;
+}
+
+.footer-links,
+.footer-social {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.footer-links a,
+.footer-social a {
+    color: #cdbdb5;
+
+    font-size: 0.9rem;
+
+    transition: 0.3s;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    text-align: center;
+
+    padding: 20px;
+
+    color: #a99890;
+
+    font-size: 0.8rem;
+}
+
+
+/* ========================================
+   WHATSAPP FLUTUANTE
+======================================== */
+
+.floating-whatsapp {
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    width: 58px;
+
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: #25D366;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 1.5rem;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+    z-index: 900;
+
+    transition: 0.3s;
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.08);
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 950px) {
+
+    .nav {
+        gap: 15px;
+    }
+
+    .header-button {
+        display: none;
+    }
+
+    .hero-container,
+    .about-container,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        text-align: center;
+
+        margin: 0 auto;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        margin-top: 20px;
+    }
+
+    .products-grid,
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-info {
+        margin-top: 10px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .header-container {
+        min-height: 70px;
+    }
+
+    .nav {
+        position: absolute;
+
+        top: 70px;
+
+        left: 0;
+
+        width: 100%;
+
+        background: var(--cream);
+
+        border-bottom: 1px solid var(--border);
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 25px 5%;
+
+        gap: 20px;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .hero {
+        padding: 65px 0;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .highlights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .products-grid,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .promo {
+        padding: 70px 0;
+    }
+
+    .promo-container {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .promo-decoration {
+        font-size: 7rem;
+    }
+
+    .about-container {
+        gap: 40px;
+    }
+
+    .contact-container {
+        gap: 40px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .floating-whatsapp {
+        width: 52px;
+
+        height: 52px;
+
+        right: 18px;
+
+        bottom: 18px;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .button {
+        width: 100%;
+    }
+
+    .product-bottom {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .product-button {
+        width: 100%;
+
+        text-align: center;
+    }
+
+}
+
+.hero-image-placeholder {
+    width: min(100%, 500px);
+    aspect-ratio: 1 / 1;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.hero-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.hero-image-placeholder {
+    width: min(100%, 500px);
+    aspect-ratio: 1 / 1;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.hero-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 700px) {
+
+    .product-image {
+        height: 240px;
+    }
+
+}
